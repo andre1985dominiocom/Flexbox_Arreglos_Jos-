@@ -10,8 +10,8 @@ body {
   background-repeat: no-repeat;
 }
 
-/* menu navegacion */
 /* Block: Header */
+/* menu navegacion */
 .header {
   display: flex; /* Se aplica flex para que el contenedor sea flexible */
   justify-content: space-between; /* Separacón título del menú de navegacón */
@@ -69,11 +69,11 @@ body {
 /* ---------------------------------- */
 /* Block: Product  List */
 .product-list {
+  display: flex;
   flex-direction: row; /* Tarjetas en fila */
   justify-content: center; /* Tarjetas en el centro */
-  padding: 4.5%;
   text-align: center;
-  display: flex;
+  padding: 4.5%;
 }
 
 .product-list__image {
