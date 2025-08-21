@@ -8,12 +8,13 @@ body {
   background-image: url(img/fondohumo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 /* menu navegacion */
 /* Block: Header */
 .header {
+  display: flex; /* Se aplica flex para que el contenedor sea flexible */
+  justify-content: space-between; /* Separacón título del menú de navegacón */
   background-image: url(img/banner.png);
   background-size: cover;
   color: #fff;
@@ -52,11 +53,15 @@ body {
 
 /* Element */
 .hero__title {
+  display: flex;
+  flex-direction: column;  /* Elemento titulo */
   margin: 0 0 10px;
   color: #fff;
 }
 
 .hero__text {
+  display: flex;
+  flex-direction: column; /* Elemento texto */
   margin: 0;
   color: #fff;
   font-size: 2rem;
@@ -64,10 +69,11 @@ body {
 /* ---------------------------------- */
 /* Block: Product  List */
 .product-list {
+  flex-direction: row; /* Tarjetas en fila */
+  justify-content: center; /* Tarjetas en el centro */
   padding: 4.5%;
   text-align: center;
-
-
+  display: flex;
 }
 
 .product-list__image {
@@ -84,10 +90,12 @@ body {
 
 /* Element */
 .product-list__item {
+  display: flex; 
+  flex-wrap: wrap; /* Se ubican los elementos como flexibles */
+  flex-direction: column; /* Elementos ubicados en columna */
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
-  display: inline-block;
   width: 300px;
   margin: 10px;
   border-radius: 10px;
@@ -120,6 +128,11 @@ body {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.product-list__button:hover {
+  background-color: #fff;
+  color: gray;
 }
 
 /* Block: Footer */
