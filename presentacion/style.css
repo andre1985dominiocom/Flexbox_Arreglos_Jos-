@@ -147,3 +147,52 @@ body {
 .footer__text {
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column; /* Tarjetas en columna en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .product-list__item {
+    width: 80%; /* Ancho de las tarjetas en pantallas pequeñas */
+    margin: 10px 0; /* Margen vertical entre tarjetas */
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer__text {
+    font-size: 14px;
+  }
+
+  .footer__text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column; /* Menú en columna en pantallas muy pequeñas */
+    align-items: center;
+  }
+
+  .header__nav {
+    margin-top: 10px;
+  }
+
+  .hero__title {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para el título */
+  }
+
+  .hero__text {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para el texto */
+  }
+}
+
+@media (max-width: 320px) {
+  .product-list__item {
+    width: 100%; /* Ancho completo para las tarjetas en pantallas muy pequeñas */
+  }
+}
