@@ -27,6 +27,19 @@ body {
   color: rgb(255, 255, 255);
 }
 
+/* Ocultar menu de navegación en escritorio*/
+.header__checkbox { 
+  display: none;
+}
+
+/* Estilos icono del menu */
+.header__icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
 .header__nav {
   margin-top: 15px;
 }
@@ -170,16 +183,61 @@ body {
   .footer__text {
     font-size: 14px;
   }
+
+  .header {
+    flex-direction: column; /* Menú en columna en pantallas muy pequeñas */
+    align-items: flex-start;
+  }
+
+  .header__icon {
+    display: flex; /* Mostrar icono del menú en pantallas pequeñas */
+    margin-top: 10px;
+  }
+
+  .header__nav {
+    display: none; /* Ocultar menú de navegación por defecto */
+    flex-direction: column;
+    width: 100%;
+    background: #222;
+    margin-top: 10px;
+  }
+
+  .header__link {
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    display: flex; /* Mostrar menú de navegación cuando el checkbox está marcado */
+  }
 }
 
 @media (max-width: 480px) {
   .header {
     flex-direction: column; /* Menú en columna en pantallas muy pequeñas */
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .header__icon {
+    display: flex; /* Mostrar icono del menú en pantallas pequeñas */
+    margin-top: 10px;
   }
 
   .header__nav {
+    display: none; /* Ocultar menú de navegación por defecto */
+    flex-direction: column;
+    width: 100%;
+    background: #222;
     margin-top: 10px;
+  }
+
+  .header__link {
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    display: flex; /* Mostrar menú de navegación cuando el checkbox está marcado */
   }
 
   .hero__title {
@@ -194,5 +252,17 @@ body {
 @media (max-width: 320px) {
   .product-list__item {
     width: 100%; /* Ancho completo para las tarjetas en pantallas muy pequeñas */
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    display: flex; /* Mostrar menú de navegación cuando el checkbox está marcado */
+  }
+
+  .header__icon {
+    margin-top: 10px;
+  }
+
+  .header__nav {
+    display: none; /* Ocultar menú de navegación por defecto */
   }
 }
