@@ -5,7 +5,7 @@
   <title>Store Car</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<div>
 
   <!-- Block: Header -->
   <header class="header">
@@ -40,6 +40,16 @@
       <button class="product-list__button">Comprar</button>
     </div>
   </section>
+  <div class="formulario"> <!-- Block -->
+    <p class="titulo">Formulario de contacto</p>
+    <form class="formulario__principal"> <!-- Element -->
+      <input type="text" placeholder="Nombre" class="formulario__input" required> <!-- Element -->
+      <input type="email" placeholder="Correo electrónico" class="formulario__input" required> <!-- Element -->
+      <input type="tel" placeholder="Teléfono" class="formulario__input" required> <!-- Element -->
+      <textarea placeholder="Mensaje" class="formulario__textarea" required></textarea> <!-- Element -->
+      <button type="submit" class="formulario__button">Enviar</button>
+    </form>
+  </div>
 
   <!-- Block: Footer -->
   <footer class="footer">

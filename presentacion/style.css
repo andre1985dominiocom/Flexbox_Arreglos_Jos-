@@ -153,6 +153,55 @@ body {
   color: gray;
 }
 
+/* Estilos formulario */
+.titulo {
+  margin: 5px auto;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.1);
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario__principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.formulario__input,
+.formulario__textarea {
+  width: 200%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario__button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+.formulario__button:hover {
+  background-color: #fff;
+  color: gray;
+}
+
 /* Block: Footer */
 .footer {
   display: flex;
@@ -178,6 +227,47 @@ body {
   .product-list__item {
     width: 80%; /* Ancho de las tarjetas en pantallas pequeñas */
     margin: 10px 0; /* Margen vertical entre tarjetas */
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .formulario {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .formulario__principal {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .formulario__input,
+  .formulario__textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .formulario__button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px auto;
+    cursor: pointer;
+  }
+
+  .formulario__button:hover {
+    background-color: #fff;
+    color: gray;
   }
 
   .footer {
