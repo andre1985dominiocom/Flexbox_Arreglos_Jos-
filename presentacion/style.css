@@ -11,9 +11,11 @@ body {
   margin: 0;
 }
 
-/* menu navegacion */
 /* Block: Header */
+/* menu navegacion */
 .header {
+  display: flex; /* Se aplica flex para que el contenedor sea flexible */
+  justify-content: space-between; /* Separacón título del menú de navegacón */
   background-image: url(img/banner.png);
   background-size: cover;
   color: #fff;
@@ -24,6 +26,19 @@ body {
 .header__logo {
   margin: 0px;
   color: rgb(255, 255, 255);
+}
+
+/* Ocultar menu de navegación en escritorio*/
+.header__checkbox { 
+  display: none;
+}
+
+/* Estilos icono del menu */
+.header__icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
 }
 
 .header__nav {
@@ -52,11 +67,15 @@ body {
 
 /* Element */
 .hero__title {
+  display: flex;
+  flex-direction: column;  /* Elemento titulo */
   margin: 0 0 10px;
   color: #fff;
 }
 
 .hero__text {
+  display: flex;
+  flex-direction: column; /* Elemento texto */
   margin: 0;
   color: #fff;
   font-size: 2rem;
@@ -64,10 +83,11 @@ body {
 /* ---------------------------------- */
 /* Block: Product  List */
 .product-list {
-  padding: 4.5%;
+  display: flex;
+  flex-direction: row; /* Tarjetas en fila */
+  justify-content: center; /* Tarjetas en el centro */
   text-align: center;
-
-
+  padding: 4.5%;
 }
 
 .product-list__image {
@@ -84,14 +104,21 @@ body {
 
 /* Element */
 .product-list__item {
+  display: flex; 
+  flex-wrap: wrap; /* Se ubican los elementos como flexibles */
+  flex-direction: column; /* Elementos ubicados en columna */
+  align-items: center; /* Centrar elementos en el eje transversal */
+  justify-content: center; /* Centrar elementos en el eje principal */
+  max-width: 300px;
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
-  display: inline-block;
   width: 300px;
   margin: 10px;
   border-radius: 10px;
   background-color: #00000027;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Modifier */
@@ -122,8 +149,65 @@ body {
   cursor: pointer;
 }
 
+.product-list__button:hover {
+  background-color: #fff;
+  color: gray;
+}
+
+/* Estilos formulario */
+.titulo {
+  margin: 5px auto;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.1);
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario__principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.formulario__input,
+.formulario__textarea {
+  width: 200%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario__button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+.formulario__button:hover {
+  background-color: #fff;
+  color: gray;
+}
+
 /* Block: Footer */
 .footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 209px;
   background: #000000;
   color: #fff;
   padding: 10px;
@@ -133,4 +217,151 @@ body {
 /* Element */
 .footer__text {
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column; /* Tarjetas en columna en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .product-list__item {
+    width: 80%; /* Ancho de las tarjetas en pantallas pequeñas */
+    margin: 10px 0; /* Margen vertical entre tarjetas */
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .formulario {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .formulario__principal {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .formulario__input,
+  .formulario__textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .formulario__button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px auto;
+    cursor: pointer;
+  }
+
+  .formulario__button:hover {
+    background-color: #fff;
+    color: gray;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer__text {
+    font-size: 14px;
+  }
+
+  .footer__text {
+    font-size: 14px;
+  }
+
+  .header {
+    flex-direction: column; /* Menú en columna en pantallas muy pequeñas */
+    align-items: flex-start;
+  }
+
+  .header__icon {
+    display: flex; /* Mostrar icono del menú en pantallas pequeñas */
+    margin-top: 10px;
+  }
+
+  .header__nav {
+    display: none; /* Ocultar menú de navegación por defecto */
+    flex-direction: column;
+    width: 100%;
+    background: #222;
+    margin-top: 10px;
+  }
+
+  .header__link {
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    display: flex; /* Mostrar menú de navegación cuando el checkbox está marcado */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column; /* Menú en columna en pantallas muy pequeñas */
+    align-items: flex-start;
+  }
+
+  .header__icon {
+    display: flex; /* Mostrar icono del menú en pantallas pequeñas */
+    margin-top: 10px;
+  }
+
+  .header__nav {
+    display: none; /* Ocultar menú de navegación por defecto */
+    flex-direction: column;
+    width: 100%;
+    background: #222;
+    margin-top: 10px;
+  }
+
+  .header__link {
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    display: flex; /* Mostrar menú de navegación cuando el checkbox está marcado */
+  }
+
+  .hero__title {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para el título */
+  }
+
+  .hero__text {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para el texto */
+  }
+}
+
+@media (max-width: 320px) {
+  .product-list__item {
+    width: 100%; /* Ancho completo para las tarjetas en pantallas muy pequeñas */
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    display: flex; /* Mostrar menú de navegación cuando el checkbox está marcado */
+  }
+
+  .header__icon {
+    margin-top: 10px;
+  }
+
+  .header__nav {
+    display: none; /* Ocultar menú de navegación por defecto */
+  }
 }
